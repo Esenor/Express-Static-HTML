@@ -10,5 +10,6 @@ services:
     volumes:
         - ../src/:/usr/src/app/src
         - ../static/:/usr/src/app/static
+        - ../test/:/usr/src/app/test
     command: ["npm", "run", "dev"]
     

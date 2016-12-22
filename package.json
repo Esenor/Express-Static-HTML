@@ -6,14 +6,18 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "supervisor src/app.js",
-    "test": "console.log('We need testing!');"
+    "test": "mocha test/testUnit.js",
+    "testJunit": "mocha test/testUnit.js --reporter mocha-junit-reporter --reporter-options mochaFile=test/test-results.xml"
   },
   "author": "Esenor",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
+    "mocha": "^3.2.0",
+    "mocha-junit-reporter": "^1.12.1",
     "node-sass-middleware": "^0.10.0",
     "pug": "^2.0.0-beta6",
+    "supertest": "^2.0.1",
     "supervisor": "^0.12.0"
   }
 }
