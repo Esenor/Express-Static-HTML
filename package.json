@@ -1,0 +1,19 @@
+{
+  "name": "express-static-html",
+  "version": "0.1.0",
+  "description": "Example of Express HTML static page with pug and sass",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "supervisor src/app.js",
+    "test": "console.log('We need testing!');"
+  },
+  "author": "Esenor",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "node-sass-middleware": "^0.10.0",
+    "pug": "^2.0.0-beta6",
+    "supervisor": "^0.12.0"
+  }
+}

@@ -1,0 +1,13 @@
+version: '2'
+services:
+  efcExpressPugSass:
+    container_name: efc-express-pug-sass
+    hostname: efc-express-pug-sass
+    image: efc-express-pug-sass
+    build: ..
+    ports:
+        - "8520:80"
+    volumes:
+        - ../src/:/usr/src/app/src
+        - ../static/:/usr/src/app/static
+    command: ["npm", "start"]

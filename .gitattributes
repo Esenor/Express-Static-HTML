@@ -1,0 +1,4 @@
+Dockerfile -lf
+package.json -lf
+docker/docker-compose_dev.yml
+docker/docker-compose.yml

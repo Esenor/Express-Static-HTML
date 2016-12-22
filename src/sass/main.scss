@@ -1,0 +1,29 @@
+$main-color: #5F5F5F;
+body {
+  color: $main-color;  
+}
+section {
+  margin-top: 100px;
+  article {
+    margin: auto;
+    max-width: 600px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px $main-color solid;
+    p {
+      margin: 10px;
+    }
+  }
+}
+nav {
+  margin: 10px;
+  a {
+    display: inline-block;
+    &:first-of-type {
+      margin-right: 10px;
+      padding-right: 10px;
+      border-right: 1px $main-color solid;
+    }
+  }
+}

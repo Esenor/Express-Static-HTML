@@ -1,0 +1,12 @@
+html
+  head
+    title!= title
+    link(href=stylesheet.main, rel="stylesheet")
+  body
+    section
+      article
+        p!=message
+        p
+          nav
+            a(href=base.url) Home link
+            a(href=base.url + '/example') Example link
