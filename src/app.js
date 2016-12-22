@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var sassMiddleware = require('node-sass-middleware');
+var common = require('./common.js');
 var app = express();
 var port = 80;
 // Register server
@@ -38,6 +39,13 @@ app.all('/example', function (req, res) {
 }); 
 app.all('*', function (req, res) {
   res.params.title = 'Express, Pug and Sass';
-  res.params.message = 'lorem <strong>ipsum</strong> en <i>dolo del</i> assarim en todho.';
+  var message = [
+    'lorem',
+    common.toHtmlStrong('ipsum'),
+    'en',
+    common.toHtmlItalic('dolo del'),
+    'assarim en todho.'
+  ].join(' ');
+  res.params.message = message;
   res.render('index', res.params);
 });
