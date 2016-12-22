@@ -11,6 +11,7 @@ section {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     border: 1px $main-color solid;
+    border-radius: 2px;
     p {
       margin: 10px;
     }
@@ -20,10 +21,13 @@ nav {
   margin: 10px;
   a {
     display: inline-block;
-    &:first-of-type {
-      margin-right: 10px;
-      padding-right: 10px;
-      border-right: 1px $main-color solid;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px $main-color solid;
+    &:last-of-type {
+      margin-right: auto;
+      padding-right: auto;
+      border-right: none;
     }
   }
 }

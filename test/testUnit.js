@@ -1,6 +1,6 @@
 var request = require('supertest')
 var fs = require('fs')
-describe('has one route', function () {
+describe('has route', function () {
   it('should return 200 code response', function (done) {
     request('http://localhost:80')
       .post('/')

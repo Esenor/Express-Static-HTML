@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var sassMiddleware = require('node-sass-middleware');
-var common = require('./common.js');
 var app = express();
 var port = 80;
 // Register server
@@ -19,33 +18,9 @@ app.use('/styles', sassMiddleware({
   outputStyle: 'compressed'
 }));
 // Register global params middleware
-app.use(function (req, res, next) {
-  res.params = {};
-  res.params.base = {
-    url: req.protocol + '://' + req.get('host')
-  }
-  res.params.stylesheet = {
-    main: res.params.base.url + '/styles/main.css'
-  }
-  next();
-});
+app.use(require('./middleware/globalParams.js'));
 // Register static folder
 app.use(express.static('../static'));
-// Base routes
-app.all('/example', function (req, res) {
-  res.params.title = 'Example: Express, Pug and Sass';
-  res.params.message = 'Example page';
-  res.render('index', res.params);
-}); 
-app.all('*', function (req, res) {
-  res.params.title = 'Express, Pug and Sass';
-  var message = [
-    'lorem',
-    common.toHtmlStrong('ipsum'),
-    'en',
-    common.toHtmlItalic('dolo del'),
-    'assarim en todho.'
-  ].join(' ');
-  res.params.message = message;
-  res.render('index', res.params);
-});
+// Register routes
+require('./router/example.js')(app);
+require('./router/all.js')(app);
