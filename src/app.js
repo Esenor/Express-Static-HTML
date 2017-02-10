@@ -13,7 +13,7 @@ app.set('view engine', 'pug');
 // Register SASS middleware
 app.use('/styles', sassMiddleware({
   src: __dirname + '/sass',
-  dest: '../static/styles',
+  dest: '/usr/src/app/static/styles',
   debug: true,
   outputStyle: 'compressed'
 }));
