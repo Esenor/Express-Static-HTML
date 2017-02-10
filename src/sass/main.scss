@@ -3,9 +3,12 @@ body {
   color: $main-color;  
 }
 section {
-  margin-top: 100px;
+  display: flex;
   article {
-    margin: auto;
+    min-width: 200px;
+    padding: 5px;
+    margin:5px;
+    margin-top: 10px;
     max-width: 600px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

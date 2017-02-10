@@ -20,7 +20,7 @@ app.use('/styles', sassMiddleware({
 // Register global params middleware
 app.use(require('./middleware/globalParams.js'));
 // Register static folder
-app.use(express.static('../static'));
+app.use(express.static('/usr/src/app/static'));
 // Register routes
 require('./router/example.js')(app);
 require('./router/all.js')(app);

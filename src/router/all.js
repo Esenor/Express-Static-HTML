@@ -1,6 +1,6 @@
 var common = require('../common.js');
 module.exports = function (app) {
-  app.all('*', function (req, res) {
+  app.all('/', function (req, res) {
     res.params.title = 'Express, Pug and Sass';
     var message = [
       'lorem',
